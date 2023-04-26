@@ -1,0 +1,15 @@
+/* *{
+    padding: 0px;
+    width: 0px;
+    height: 0px;
+} */
+body{
+    background-color: #efefef;  
+}
+p,h1{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #5c5c5c;
+}
+.tamanho{
+    width: 350px;
+}
