@@ -35,44 +35,44 @@
             <div class="col-8">
                 <div class="d-flex">
                     <label for="descDisciplina">Nome:</label>
-                    <input class="input-group-text w-100 text-left" type="text" name="descDisciplina" id="">
+                    <input class="input-group-text w-100 text-left" type="text" name="nome" id="">
                 </div>
             </div>
             <div class="col-4">
                 <label for="ano">Data de nascimento:</label>
-                <input class="input-group-text w-100 text-left" type="date" name="cargahr" id="">
+                <input class="input-group-text w-100 text-left" type="date" name="dateNasc" id="">
             </div>
             <div class="col-8">
                 <label for="ano">E-mail:</label>
-                <input class="input-group-text w-100 text-left" type="text" name="cargahr" id="">
+                <input class="input-group-text w-100 text-left" type="text" name="email" id="">
             </div>
             <div class="col-4">
                 <label for="ano">Telefone:</label>
-                <input class="input-group-text w-100 text-left" type="number" name="cargahr" id="">
+                <input class="input-group-text w-100 text-left" type="number" name="telefone" id="">
             </div>
             <div class="col-4">
                 <label for="ano">CEP:</label>
-                <input class="input-group-text w-100 text-left" type="number" name="cargahr" id="">
+                <input class="input-group-text w-100 text-left" type="number" name="cep" id="">
             </div>
             <div class="col-8">
                 <label for="ano">Endereço:</label>
-                <input class="input-group-text w-100 text-left" type="text" name="cargahr" id="">
+                <input class="input-group-text w-100 text-left" type="text" name="endereco" id="">
             </div>
             <div class="col-3">
                 <label for="ano">nº:</label>
-                <input class="input-group-text w-100 text-left" type="number" name="cargahr" id="">
+                <input class="input-group-text w-100 text-left" type="number" name="numCasa" id="">
             </div>
             <div class="col-3">
                 <label for="ano">Bairro:</label>
-                <input class="input-group-text w-100 text-left" type="text" name="cargahr" id="">
+                <input class="input-group-text w-100 text-left" type="text" name="bairro" id="">
             </div>
             <div class="col-3">
                 <label for="ano">Cidade:</label>
-                <input class="input-group-text w-100 text-left" type="Cidade:" name="cargahr" id="">
+                <input class="input-group-text w-100 text-left" type="Cidade:" name="cidade" id="">
             </div>
             <div class="col-3">
                 <label for="ano">Estado:</label>
-                <input class="input-group-text w-100 text-left" type="text" name="cargahr" id="">
+                <input class="input-group-text w-100 text-left" type="text" name="estado" id="">
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label" for="exampleCheck1">Genero</label>
