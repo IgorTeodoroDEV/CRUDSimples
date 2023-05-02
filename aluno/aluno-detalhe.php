@@ -37,7 +37,7 @@
     <div class="row">
     <div class="container">
       <div class="float-right ">
-        <a class="btn btn-success" href="aluno-inserir.php">Adicionar Aluno</a>
+        <a class="btn btn-success" href="aluno-editar.php?id=<?php echo $aluno->id?>">Alterar</a>
       </div>
       <div class="mx-auto m-4 tamanho text-center">
         <h3>Aluno: <?php echo $aluno->nome ?></h3>

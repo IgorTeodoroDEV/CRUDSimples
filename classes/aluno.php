@@ -15,7 +15,6 @@ Class Aluno{
     public $dataNasc;
     public $genero;
     public $matricula;
-
     public $descTurma;
 
     public function __construct($id = false)
@@ -30,6 +29,7 @@ Class Aluno{
     }
 
     public function inserir(){
+
             $sql = "INSERT INTO tb_alunos (nome, email, Telefone, cep, endereco, numeroCasa, bairro, cidade, estado, turma, dataNasc, genero, matricula) VALUES (
                 '".$this->nome."',
                 '".$this->email."',
@@ -46,6 +46,8 @@ Class Aluno{
                 'ATIVA'
             )";
             $conexao = new PDO('mysql:host=127.0.0.1;dbname=sis-escolar','root','');
+
+            echo $sql;
 
             $conexao->exec($sql);
     
@@ -92,6 +94,7 @@ Class Aluno{
         $this->dataNasc = $linha['dataNasc'];
         $this->genero = $linha['genero'];
         $this->descTurma = $linha['descTurma'];
+        $this->matricula = $linha['matricula'];
     }
 
     public function atualizar(){

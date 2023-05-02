@@ -1,15 +1,16 @@
 <?php
-    require_once "../classes/aluno.php";
-    require_once "../classes/turma.php";
+require_once "../classes/aluno.php";
+require_once "../classes/turma.php";
 
-    $id = $_GET['id'];
-    $aluno =  new Aluno($id);
+$id = $_GET['id'];
+$aluno =  new Aluno($id);
 
-    $turmas =  (new Turma())->listar();
+$turmas =  (new Turma())->listar();
 
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <!-- Meta tags Obrigatórias -->
     <meta charset="utf-8">
@@ -31,6 +32,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../Turma/turmas-listar.php">Turmas</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Aluno/alunos-listar.php">Aluno</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -42,79 +46,85 @@
             <input type="hidden" name="id" value="<?= $aluno->id ?>">
             <div class="col-8">
                 <label for="descDisciplina">Nome:</label>
-                <input class="input-group-text w-100 text-left" type="text" name="nome" value="<?= $aluno->nome ?>">
+                <input class="input-group-text w-100 text-left" type="text" name="nome" value="<?= $aluno->nome ?>" required>
             </div>
             <div class="col-4">
                 <label for="ano">Data de nascimento:</label>
-                <input class="input-group-text w-100 text-left" type="date" name="dataNasc" value="<?= $aluno->dataNasc ?>">
+                <input class="input-group-text w-100 text-left" type="date" name="dataNasc" value="<?= $aluno->dataNasc ?>" required>
             </div>
             <div class="col-8 mt-2">
                 <label for="ano">E-mail:</label>
-                <input class="input-group-text w-100 text-left" type="text" name="email" value="<?= $aluno->email ?>">
+                <input class="input-group-text w-100 text-left" type="text" name="email" value="<?= $aluno->email ?>" required>
             </div>
             <div class="col-4 mt-2">
                 <label for="ano">Telefone:</label>
-                <input class="input-group-text w-100 text-left" type="number" name="telefone" value="<?= $aluno->telefone ?>">
+                <input class="input-group-text w-100 text-left" type="number" name="telefone" value="<?= $aluno->telefone ?>" required>
             </div>
             <div class="col-4 mt-2">
                 <label for="ano">CEP:</label>
-                <input class="input-group-text w-100 text-left" type="number" name="cep" value="<?= $aluno->cep ?>">
+                <input class="input-group-text w-100 text-left" type="number" name="cep" id="cep" value="<?= $aluno->cep ?>" required>
             </div>
             <div class="col-8 mt-2">
                 <label for="ano">Endereço:</label>
-                <input class="input-group-text w-100 text-left" type="text" name="endereco" value="<?= $aluno->endereco ?>">
+                <input class="input-group-text w-100 text-left" type="text" name="endereco" id="endereco" value="<?= $aluno->endereco ?>" required>
             </div>
             <div class="col-3 mt-2">
                 <label for="ano">nº:</label>
-                <input class="input-group-text w-100 text-left" type="number" name="numeroCasa" value="<?= $aluno->numeroCasa ?>">
+                <input class="input-group-text w-100 text-left" type="number" name="numeroCasa" value="<?= $aluno->numeroCasa ?>" required>
             </div>
             <div class="col-3 mt-2">
                 <label for="ano">Bairro:</label>
-                <input class="input-group-text w-100 text-left" type="text" name="bairro" value="<?= $aluno->bairro ?>">
+                <input class="input-group-text w-100 text-left" type="text" name="bairro" id="bairro" value="<?= $aluno->bairro ?>" required>
             </div>
             <div class="col-3 mt-2">
                 <label for="ano">Cidade:</label>
-                <input class="input-group-text w-100 text-left" type="Cidade:" name="cidade" value="<?= $aluno->cidade ?>">
+                <input class="input-group-text w-100 text-left" type="Cidade:" name="cidade" id="cidade" value="<?= $aluno->cidade ?>" required>
             </div>
             <div class="col-3 mt-2">
                 <label for="ano">Estado:</label>
-                <input class="input-group-text w-100 text-left" type="text" name="estado" value="<?= $aluno->estado ?>">
+                <input class="input-group-text w-100 text-left" type="text" name="estado" id="estado" value="<?= $aluno->estado ?>" required>
             </div>
             <div class="form-group form-check mt-2">
                 <label class="form-check-label" for="genero">Genero</label>
                 <div class="col-2">
-                    <input type="radio" class="form-check-input" name="genero" value="M" <?php if($aluno->genero == 'M'){echo"CHECKED";};?>>
+                    <input type="radio" class="form-check-input" name="genero" value="M" <?php if ($aluno->genero == 'M') {
+                                                                                                echo "CHECKED";
+                                                                                            }; ?>>
                     <label class="form-check-label" for="genero">masculino</label>
                 </div>
                 <div class="col-2">
-                    <input type="radio" class="form-check-input" name="genero" value="F" <?php if($aluno->genero == 'F'){echo"CHECKED";};?>>
+                    <input type="radio" class="form-check-input" name="genero" value="F" <?php if ($aluno->genero == 'F') {
+                                                                                                echo "CHECKED";
+                                                                                            }; ?>>
                     <label class="form-check-label" for="genero">feminino</label>
                 </div>
             </div>
             <div class="col-2 mt-2">
                 <div class="form-group">
                     <label for="turma">Turma</label>
-                    <select  name="turma"  class="form-control">    
-                        <option value="<?= $aluno->turma ?>"><?php echo $aluno->descTurma?></option>
-                        <?php foreach ($turmas as $turma):?>
-                         <?php if($aluno->descTurma == $turma['descTurma']){
+                    <select name="turma" class="form-control">
+                        <option value="<?= $aluno->turma ?>"><?php echo $aluno->descTurma ?></option>
+                        <?php foreach ($turmas as $turma) : ?>
+                            <?php if ($aluno->descTurma == $turma['descTurma']) {
                             ?>
                             <?php
-                         }else{
+                            } else {
                             ?>
-                                <option  value="<?php echo $turma['id']?>"><?php echo $turma['descTurma']?></option>
+                                <option value="<?php echo $turma['id'] ?>"><?php echo $turma['descTurma'] ?></option>
                             <?php
-                         } ?>
+                            } ?>
                         <?php endforeach ?>
                     </select>
                 </div>
             </div>
             <div class="col-5 mt-3">
-            <input class="btn btn-success m-4 " type="submit" value="Gravar">
-            <a class="btn btn-danger m-4" href="alunos-listar.php">Cancelar</a>
+                <input class="btn btn-success m-4 " type="submit" value="Gravar">
+                <a class="btn btn-danger m-4" href="alunos-listar.php">Cancelar</a>
             </div>
         </form>
     </div>
+    <script src="../assest/js/validaCamp.js"></script>
+    <script src="../assest/js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
