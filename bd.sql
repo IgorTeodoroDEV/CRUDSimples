@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Servidor:                     127.0.0.1
--- Versão do servidor:           10.4.27-MariaDB - mariadb.org binary distribution
+-- Versão do servidor:           8.0.30 - MySQL Community Server - GPL
 -- OS do Servidor:               Win64
 -- HeidiSQL Versão:              11.3.0.6295
 -- --------------------------------------------------------
@@ -14,59 +14,26 @@
 
 
 -- Copiando estrutura do banco de dados para sis-escolar
-CREATE DATABASE IF NOT EXISTS `sis-escolar` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
+CREATE DATABASE IF NOT EXISTS `sis-escolar` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `sis-escolar`;
-
--- Copiando estrutura para tabela sis-escolar.tb_acesso
-CREATE TABLE IF NOT EXISTS `tb_acesso` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `aluno` int(1) NOT NULL,
-  `senha` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK1_acesso_aluno` (`aluno`),
-  CONSTRAINT `FK1_acesso_aluno` FOREIGN KEY (`aluno`) REFERENCES `tb_alunos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- Exportação de dados foi desmarcado.
-
--- Copiando estrutura para tabela sis-escolar.tb_alunos
-CREATE TABLE IF NOT EXISTS `tb_alunos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `Telefone` varchar(50) NOT NULL,
-  `cep` int(11) NOT NULL DEFAULT 0,
-  `endereco` varchar(50) NOT NULL,
-  `numeroCasa` int(11) NOT NULL DEFAULT 0,
-  `bairro` varchar(50) NOT NULL,
-  `cidade` varchar(50) NOT NULL,
-  `estado` varchar(50) NOT NULL,
-  `turma` int(11) NOT NULL,
-  `matricula` int(1) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_aluno_turma` (`turma`),
-  CONSTRAINT `FK_aluno_turma` FOREIGN KEY (`turma`) REFERENCES `tb_turmas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- Exportação de dados foi desmarcado.
 
 -- Copiando estrutura para tabela sis-escolar.tb_disciplinas
 CREATE TABLE IF NOT EXISTS `tb_disciplinas` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `descDisciplinas` varchar(50) NOT NULL,
   `cargahr` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Exportação de dados foi desmarcado.
 
--- Copiando estrutura para tabela sis-escolar.tb_turmas
+-- Copiando estrutura para tabela sis-escolar.tb_tumas
 CREATE TABLE IF NOT EXISTS `tb_turmas` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `descTurma` varchar(50) NOT NULL,
   `ano` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Exportação de dados foi desmarcado.
 
