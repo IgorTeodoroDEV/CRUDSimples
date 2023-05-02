@@ -39,7 +39,7 @@
         <a class="btn btn-success" href="aluno-inserir.php">Adicionar Aluno</a>
       </div>
       <div class="mx-auto m-4 tamanho text-center">
-        <h3>Listar Turmas</h3>
+        <h3>Listar Alunos</h3>
       </div>
       <table class="table">
         <div class="rounded">
@@ -65,7 +65,7 @@
                 <td><?php echo $linha['Telefone']?></td>
                 <td><?php echo $linha['matricula']?></td>
                 <td>
-                    <a class="btn btn-primary" href="aluno-editar.php?id=<?=$linha['id']?>">Ver mais</a>
+                    <a class="btn btn-primary" href="aluno-detalhe.php?id=<?=$linha['id']?>">Ver mais</a>
                     <a class="btn btn-primary" href="aluno-editar.php?id=<?=$linha['id']?>">Atualizar</a>
                     <a class="btn btn-danger" href="aluno-excluir.php?id=<?=$linha["id"]?>">Excluir</a>
                 </td>
