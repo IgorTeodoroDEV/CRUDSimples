@@ -94,9 +94,17 @@
             <div class="col-2 mt-2">
                 <div class="form-group">
                     <label for="turma">Turma</label>
-                    <select  name="turma"  class="form-control">
+                    <select  name="turma"  class="form-control">    
+                        <option value="<?= $aluno->turma ?>"><?php echo $aluno->descTurma?></option>
                         <?php foreach ($turmas as $turma):?>
-                        <option  value="<?php echo $turma['id']?>"><?php echo $turma['descTurma']?></option>
+                         <?php if($aluno->descTurma == $turma['descTurma']){
+                            ?>
+                            <?php
+                         }else{
+                            ?>
+                                <option  value="<?php echo $turma['id']?>"><?php echo $turma['descTurma']?></option>
+                            <?php
+                         } ?>
                         <?php endforeach ?>
                     </select>
                 </div>

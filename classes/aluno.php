@@ -15,6 +15,7 @@ Class Aluno{
     public $dataNasc;
     public $genero;
 
+    public $descTurma;
 
     public function __construct($id = false)
     {
@@ -88,6 +89,7 @@ Class Aluno{
         $this->turma = $linha['turma'];
         $this->dataNasc = $linha['dataNasc'];
         $this->genero = $linha['genero'];
+        $this->descTurma = $linha['descTurma'];
     }
 
     public function atualizar(){
