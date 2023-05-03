@@ -11,18 +11,19 @@
     <title>Sistema escolar</title>
   </head>
   <body>
+    <?php ?>
   <div class="d-flex justify-content-center align-items-center ">
-    <form class="form-signin text-aling-center">
+    <form action="acesso/acesso.php"  class="form-signin text-aling-center" method="post">
         <h1>sistema escolar</h1>
             <p class="mb-3 font-weight-normal text-center">Faça seu login</p>
-            <label for="inputEmail" class="sr-only">Email</label>
-            <input type="email" id="inputEmail" class="form-control mb-4" placeholder = "Email" required autofocus>
+            <label for="Email" class="sr-only">Email</label>
+            <input type="email" id="email" name="email" class="form-control mb-4" placeholder = "Email" required autofocus>
             <label for="inputPassword" class="sr-only">Senha</label>
-            <input type="senha" id="inputPassword" class="form-control mb-4" placeholder="Senha" required>
+            <input type="password" name="senha" id="inputPassword" class="form-control mb-4" placeholder="Senha" >
                 <button class="btn btn-lg btn-primary btn-block" type="submit">login</button>
                 <p class="mt-5 mb-3 text-muted text-center">&copy; Desenvolvido por igor teodoro</p>
-                </form>
-            </div>
+      </form>
+    </div>
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
