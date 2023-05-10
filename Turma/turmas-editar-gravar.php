@@ -1,4 +1,5 @@
 <?php 
+require_once "../acesso/verifica_pag.php";
 require_once "../classes/turma.php";
 
 $id = $_POST['id'];

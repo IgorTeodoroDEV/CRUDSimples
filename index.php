@@ -11,8 +11,7 @@
     <title>Sistema escolar</title>
   </head>
   <body>
-    <?php ?>
-  <div class="d-flex justify-content-center align-items-center ">
+  <div class="d-flex justify-content-center align-items-center h-100 bg-dark">
     <form action="acesso/acesso.php"  class="form-signin text-aling-center" method="post">
         <h1>sistema escolar</h1>
             <p class="mb-3 font-weight-normal text-center">Faça seu login</p>
@@ -20,8 +19,8 @@
             <input type="email" id="email" name="email" class="form-control mb-4" placeholder = "Email" required autofocus>
             <label for="inputPassword" class="sr-only">Senha</label>
             <input type="password" name="senha" id="inputPassword" class="form-control mb-4" placeholder="Senha" >
-                <button class="btn btn-lg btn-primary btn-block" type="submit">login</button>
-                <p class="mt-5 mb-3 text-muted text-center">&copy; Desenvolvido por igor teodoro</p>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">login</button>
+            <p class="mt-5 mb-3 text-muted text-center">&copy; Desenvolvido por igor teodoro</p>
       </form>
     </div>
     <!-- JavaScript (Opcional) -->

@@ -1,3 +1,6 @@
+<?php 
+  require_once "acesso/verifica_pag.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -11,24 +14,16 @@
     <title>Sistema escolar</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand">Sistema acadêmico</a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-            <a class="nav-link" href="diciplinas-listar.php">Disciplina</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="Turma/turmas-listar.php">Turmas</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="Aluno/alunos-listar.php">Aluno</a>
-            </li>
-        </ul>
+    <?php include_once "view/nav-bar-painel.php" ?>
+      <div class="z-index-1  auto-prenc-img">
+        <!-- <img class="z-index-n2"src="" alt="livros"> -->
+      </div>
+      <div class="z-index-2 position-absolute text-center w-100">
+        <div class=" justify-content-center align-items-center">
+          <h1>Bem-vindo</h1>
+          <h3><?php echo $_SESSION['usuario'] ?></h3>
         </div>
-    </nav>
-    <!-- JavaScript (Opcional) -->
-    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+      </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

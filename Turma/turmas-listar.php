@@ -1,4 +1,5 @@
 <?php 
+require_once "../acesso/verifica_pag.php";
 require_once "../classes/turma.php";
 
 $turma = new Turma();
@@ -22,25 +23,13 @@ $lista = $turma->listar();
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand">Sistema acadêmico</a>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="../diciplina/disciplinas-listar.php">Disciplina</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="turmas-listar.php">Turmas</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <?php include_once "../view/nav-bar.php" ?>
   <div class="row">
     <div class="container">
-      <div class="float-right ">
+      <div class="float-right mt-4 ">
         <a class="btn btn-success" href="turmas-inserir.html">Adicionar Turma</a>
       </div>
-      <div class="mx-auto m-4 tamanho text-center">
+      <div class="m-4">
         <h3>Listar Turmas</h3>
       </div>
       <table class="table">

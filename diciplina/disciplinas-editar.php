@@ -1,4 +1,5 @@
 <?php 
+require_once "../acesso/verifica_pag.php";
 require_once "../classes/disciplina.php";
 
 $id = $_GET['id'];
@@ -19,19 +20,7 @@ $disciplina = new Disciplina($id);
     <title>Sistema Acadêmico</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand">Sistema acadêmico</a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="disciplinas-listar.php">Disciplina</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../Turma/turmas-listar.php">Turmas</a>
-            </li>
-            </ul>
-        </div>
-    </nav>
+  <?php include_once "../view/nav-bar.php" ?>
     <div class="mx-auto m-4 tamanho text-center" >
         <h4>Alterar Disciplina: <?= $disciplina->descDisciplina ?></h4>
     </div>
