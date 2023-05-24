@@ -44,6 +44,7 @@ CREATE TABLE IF NOT EXISTS `tb_alunos` (
   `dataNasc` date NOT NULL,
   `genero` varchar(50) NOT NULL,
   `matricula` varchar(50) DEFAULT NULL,
+  `foto` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK1_tb_alunos_tb_turma` (`turma`),
   CONSTRAINT `FK1_tb_alunos_tb_turma` FOREIGN KEY (`turma`) REFERENCES `tb_turmas` (`id`)

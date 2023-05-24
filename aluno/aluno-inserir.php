@@ -22,7 +22,7 @@ $turmas =  (new Turma())->listar();
         <h3>Novo Aluno</h3>
     </div>
     <div class="container">
-        <form action="aluno-gravar.php" method="post" class="row">
+        <form action="aluno-gravar.php" method="post" class="row" enctype="multipart/form-data">
             <div class="col-8">
                 <label for="descDisciplina">Nome:</label>
                 <input class="input-group-text w-100 text-left form-control" type="text" name="nome" id="" required>
@@ -82,6 +82,12 @@ $turmas =  (new Turma())->listar();
                             <option value="<?php echo $turma['id'] ?>"><?php echo $turma['descTurma'] ?></option>
                         <?php endforeach ?>
                     </select>
+                </div>
+            </div>
+            <div class="col-2 mt-2">
+            <div class="form-group">
+                <label for="turma">Selecione uma foto</label>
+                    <input type="file" name="fileFoto">
                 </div>
             </div>
             <div class="col-5 mt-3">
